@@ -10,6 +10,7 @@
   --button-hover-color: #188ce8;
   --gradient: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
   --icon-color: #afb1b8;
+  --main-animation: cubic-bezier(0.4, 0, 0.2, 1);
 }
 h1,
 h2,
@@ -80,6 +81,9 @@ body {
   color: var(--main-text-color);
   text-decoration: none;
   padding: 32px 0;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .nav-button::before {
   position: absolute;
@@ -93,7 +97,7 @@ body {
   transform: scale(0);
   transition-property: transform;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--main-animation);
 }
 .nav-button:hover:before,
 .nav-button:focus:before {
@@ -112,12 +116,10 @@ body {
 .nav-button:hover,
 .nav-contact:hover {
   color: var(--logo-text-color);
-  text-decoration: none;
 }
 .nav-button:focus,
 .nav-contact:focus {
   color: var(--logo-text-color);
-  text-decoration: none;
 }
 .nav-first {
   font-weight: 500;
@@ -137,10 +139,16 @@ body {
   color: var(--paragraph-text-color);
   text-decoration: none;
   padding: 32px 0;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 
 .envelope {
   fill: var(--paragraph-text-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .nav-contact:hover .envelope {
   fill: var(--logo-text-color);
@@ -186,6 +194,9 @@ body {
   cursor: pointer;
   margin: 0 auto;
   max-width: 216px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .button:hover,
 .button:focus {
@@ -314,6 +325,9 @@ address {
   color: var(--cap-text-color);
   opacity: 0.6;
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .footer-contact:hover {
   color: var(--logo-text-color);
@@ -347,6 +361,9 @@ address {
   border-radius: 4px;
   border: 0;
   padding: 6px 22px;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .filter-tab:first-child {
   padding: 6px 25px;
@@ -453,9 +470,16 @@ img {
   justify-content: center;
   background-color: var(--main-background-color);
   border-radius: 50%;
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .net-icon {
   fill: var(--icon-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .social-link:hover,
 .social-link:focus {
@@ -479,7 +503,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  fill: var(--icon-color);
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -515,6 +543,9 @@ img {
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-animation);
 }
 .social-footer-link:hover,
 .social-footer-link:focus {
@@ -579,4 +610,5 @@ body.modal-open {
   position: absolute;
   top: 8px;
   right: 8px;
+  cursor: pointer;
 }
